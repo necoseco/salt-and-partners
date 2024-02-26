@@ -66,6 +66,7 @@ type Props = {
 };
 
 export default function Section({ sections, locale, posts, postMeta }: Props) {
+  
   return (
     <>
       {sections.map((section) => {

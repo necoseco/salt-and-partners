@@ -84,6 +84,7 @@ export type AllPostsSectionRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   id: Scalars['ItemId']['output'];
+  allPostHeader: Scalars['String']['output'];
 };
 
 

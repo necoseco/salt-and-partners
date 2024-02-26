@@ -28,6 +28,5 @@ export default async function queryDatoCMS<
       body: JSON.stringify({ query: print(document), variables }),
     })
   ).json();
-
   return data;
 }

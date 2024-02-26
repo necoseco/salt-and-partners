@@ -13,6 +13,7 @@ type Props = {
 };
 
 const PostGridRenderer = ({ data, lng, postMeta }: Props) => {
+
   return (
     <section className="mt-4 pb-[120px] pt-[120px]">
       <div className="container">
