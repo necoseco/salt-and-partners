@@ -84,7 +84,81 @@ const AboutIntro = ({
           <ReactMarkdown>{subheader || ''}</ReactMarkdown>
         </div>
       </motion.div>
-      
+      <div className="grid max-w-screen-lg gap-8 sm:mx-auto lg:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: 'easeOut', duration: 0.5, delay: 0.6 }}
+          className="grid grid-cols-2 gap-5 shadow-2xl drop-shadow-2xl"
+        >
+          <div className="relative z-50 col-span-2 h-56 w-full rounded object-cover shadow-lg">
+            {
+              // I can narrow down the type of the data prop to ResponsiveImageType because i know from
+              // Dato's validation that the array will have exactly 3 images
+            }
+            <DatoImage
+              key={images[0].id}
+              data={images[0].responsiveImage as ResponsiveImageType}
+              className="h-full w-full object-contain"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="50% 50%"
+            />
+          </div>
+          <div className="relative h-48 w-full rounded object-cover shadow-lg">
+            <DatoImage
+              key={images[1].id}
+              data={images[1].responsiveImage as ResponsiveImageType}
+              className="h-full w-full object-contain"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="50% 50%"
+            />
+          </div>
+          <div className="relative h-48 w-full rounded object-cover shadow-lg">
+            <DatoImage
+              key={images[2].id}
+              data={images[2].responsiveImage as ResponsiveImageType}
+              className="h-full w-full object-contain"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="50% 50%"
+            />
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ ease: 'easeOut', duration: 0.3, delay: 1 }}
+          className="z-0 flex flex-col justify-center"
+        >
+          {introduction && (
+            <StructuredText
+              data={introduction.value}
+              customNodeRules={[
+                renderNodeRule(isHeading, ({ children, key }) => {
+                  return (
+                    <h3
+                      className="mb-2 mt-4 text-lg font-semibold leading-5"
+                      key={key}
+                    >
+                      {children}
+                    </h3>
+                  );
+                }),
+                renderNodeRule(isParagraph, ({ children, key }) => {
+                  return (
+                    <div className="mb-4 text-sm text-body-color" key={key}>
+                      {children}
+                    </div>
+                  );
+                }),
+              ]}
+              renderNode={Highlighter}
+            />
+          )}
+        </motion.div>
+      </div>
     </div>
   );
 };
