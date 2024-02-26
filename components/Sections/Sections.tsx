@@ -416,7 +416,6 @@ export default function Section({ sections, locale, posts, postMeta }: Props) {
                 header={aboutIntroSectionRecord.header}
                 subheader={aboutIntroSectionRecord.subheader}
                 introduction={aboutIntroSectionRecord.introductionText}
-                images={aboutIntroSectionRecord.images}
                 preHeader={aboutIntroSectionRecord.preHeader}
               />
             );
