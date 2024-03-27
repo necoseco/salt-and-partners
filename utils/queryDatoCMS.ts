@@ -17,7 +17,7 @@ export default async function queryDatoCMS<
     Authorization: `Bearer ${process.env.DATOCMS_READONLY_API_TOKEN}`,
   };
 
-  if (true) headers['X-Include-Drafts'] = 'true';
+  if (isDraft) headers['X-Include-Drafts'] = 'true';
 
   const { data } = await (
     await fetch('https://graphql.datocms.com/', {
