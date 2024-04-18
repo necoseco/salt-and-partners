@@ -1,11 +1,11 @@
 export default function Head() {
   return (
     <>
-      <title>Landing page DatoCMS Starter</title>
+      <title>Salt & Partners</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"
-        content="Visit https://www.datocms.com/marketplace/starters for more starters"
+        content="Welcome to Salt & Partners - Global Expertise, Local Excellence: Your Legal Partners Across Borders"
       />
       <link rel="icon" href="/images/favicon.ico" />
     </>
