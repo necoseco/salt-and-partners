@@ -46,7 +46,7 @@ const GENERAL_CONTENT_QUERY = `
 
 async function getSiteData() {
   const { site } = await performRequest({ query: GENERAL_CONTENT_QUERY });
-  console.log(site)
+  // console.log(site)
   return site;
 }
 

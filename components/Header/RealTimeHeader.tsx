@@ -28,7 +28,7 @@ const RealTimeHeader = ({
 
   if (!data) return <></>;
 
-  return <Header lng={locale} data={data} />;
+  return <Header lng={locale} data={data} docs={false}/>;
 };
 
 export default RealTimeHeader;
