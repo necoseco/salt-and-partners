@@ -3,7 +3,7 @@ import '@/styles/global.css';
 import { SiteLocale } from '@/graphql/generated';
 import getAvailableLocales from '@/app/i18n/settings';
 import Head from './[lng]/Head';
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 type Params = {
   children: React.ReactNode;
   params: {
@@ -24,8 +24,9 @@ export default async function RootLayout({
 }: Params) {
   return (
     <html lang={lng}>
-      <Head />
+      {/* <Head /> */}
       <body className={`tracking-tight antialiased`}>{children}</body>
+      <GoogleAnalytics gaId="G-B3M8K67KFL" />
     </html>
   );
 }

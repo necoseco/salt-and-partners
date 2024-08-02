@@ -15,7 +15,7 @@ const MinimalCardsFeature = ({
   featuresSubheader,
 }: Props) => {
   return (
-    <div className="flex flex-wrap justify-center gap-8 px-32 py-16  text-center md:grid md:grid-cols-2 md:text-primary lg:grid-cols-3">
+    <div className="flex flex-wrap justify-center gap-8 px-4 md:px-32 py-16  text-center md:grid md:grid-cols-2 md:text-primary lg:grid-cols-3">
       {features.map((feature) => {
         return (
           <div

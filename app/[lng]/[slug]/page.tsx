@@ -36,7 +36,7 @@ export default async function Home({ params: { lng, slug } }: Params) {
   if (!data.page) notFound();
 
  
-
+  // console.log("Data : ", data.allPosts)
   return (
     <>
       {!isEnabled && (

@@ -87,12 +87,12 @@ export default function ScrollToTop({ lng, isDraft }: Props) {
                 </motion.div>
               )}
             </AnimatePresence>
-            <div
+            {/* <div
               onClick={toggleDraft}
               className="flex cursor-pointer items-center justify-center rounded-md bg-primary p-4 font-bold text-white shadow-md transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
             >
               {isDraft ? 'Enter Published Mode' : 'Enter Draft Mode'}
-            </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>

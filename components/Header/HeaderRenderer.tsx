@@ -7,6 +7,7 @@ import RealTimeHeader from './RealTimeHeader';
 type Props = {
   lng: SiteLocale;
   isDraft: boolean;
+  docs:boolean;
 };
 
 export type Menu = {
@@ -24,7 +25,7 @@ export type NotificationStripType = {
   url: string | undefined | null;
 };
 
-const HeaderRenderer = async ({ lng, isDraft }: Props) => {
+const HeaderRenderer = async ({ lng, isDraft, docs }: Props) => {
   const fallbackLng = await getFallbackLocale();
   const data = await queryDatoCMS(
     MenuDocument,
@@ -37,7 +38,7 @@ const HeaderRenderer = async ({ lng, isDraft }: Props) => {
 
   return (
     <>
-      {!isDraft && <Header lng={lng} data={data} />}
+      {!isDraft && <Header lng={lng} data={data} docs={docs}/>}
       {isDraft && (
         <RealTimeHeader
           initialData={data}

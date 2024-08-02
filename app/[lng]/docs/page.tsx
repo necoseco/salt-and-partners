@@ -9,6 +9,7 @@ import {
 } from '@/graphql/generated';
 import { notFound } from 'next/navigation';
 import FeaturedSection from '@/components/Documentaiton/FeaturedSection';
+import Searchbar from '@/components/Searchbar/Searchbar';
 
 type Params = {
   params: {
@@ -38,22 +39,7 @@ const Documentation = async ({ params: { lng } }: Params) => {
         </p>
 
         <div className="mx-auto flex max-w-xl flex-col justify-center gap-2 py-8 md:flex-row">
-          <button
-            // onClick={() => toggleCommand()}
-            className="hover:ring-primary-300 flex h-10 w-full flex-row items-center gap-2 truncate rounded-xl border border-slate-300 pl-4 pr-2 text-left text-sm text-slate-500 outline-none hover:ring-2 hover:ring-offset-2 hover:ring-offset-slate-50 dark:border-slate-700 dark:text-slate-100 dark:hover:ring-offset-slate-800"
-          >
-            <Search size={16} className="flex-none" />
-            <span className="flex-1">Search Docs...</span>
-            <kbd className="rounded-xl border border-slate-300 bg-slate-100 px-2 py-1 text-xs text-slate-600 dark:border-slate-500 dark:bg-slate-700 dark:text-white">
-              CTRL + K
-            </kbd>
-          </button>
-          <Link
-            href=""
-            className="focus:ring-primary-400 dark:bg-primary-600 dark:hover:bg-primary-500 flex h-10 min-w-[6rem] flex-none items-center justify-center whitespace-nowrap rounded-xl bg-primary opacity-90 px-6 text-base font-medium text-white hover:bg-primary hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-50 dark:ring-offset-slate-800"
-          >
-            Get Started
-          </Link>
+          <Searchbar/>
         </div>
       </section>
       <FeaturedSection
